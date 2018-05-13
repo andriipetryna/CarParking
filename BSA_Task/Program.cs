@@ -12,6 +12,17 @@ namespace BSA_Task
     {
         static void Main(string[] args)
         {
+            Console.Title = "Car Parking";
+
+            Menu menu = new Menu(Parking.Instance);
+
+            bool isMenuActive = true;
+            do
+            {
+                isMenuActive = menu.ShowMenu();
+            } while (isMenuActive);
+
+            Parking.Instance.Dispose();
         }
     }
 }
